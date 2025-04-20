@@ -2,116 +2,101 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Anjo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maria & Eu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      background: #fff6f6;
+      color: #3a3a3a;
+      text-align: center;
       overflow-x: hidden;
     }
-    .screen {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 2rem;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 1s ease;
+
+    header {
+      padding: 50px 20px 20px;
     }
-    .screen.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
     h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.5rem;
-      color: #c2185b;
-      margin-top: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #b30059;
     }
-    p {
-      max-width: 700px;
-      font-size: 1.25rem;
-      color: #333;
-      margin: 1.5rem auto;
-      line-height: 1.8;
-    }
-    img {
+
+    .photo {
+      margin: 30px auto;
       max-width: 90%;
       border-radius: 20px;
-      margin-top: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
-    .video-container {
-      margin-top: 2rem;
-      width: 90%;
-      max-width: 560px;
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+
+    .photo img {
       width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      height: auto;
+      display: block;
     }
-    .gift-tag-button {
-      background: #c2185b;
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-size: 1.3rem;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: background 0.3s;
+
+    .declaration {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #444;
+      animation: fadeIn 2s ease-in-out;
     }
-    .gift-tag-button:hover {
-      background: #a3154a;
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #999;
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .declaration {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Tela de entrada -->
-  <div id="tela-inicial" class="screen visible">
-    <button class="gift-tag-button" onclick="mostrarPresente()">🎁 Um presente só pra você, Maria</button>
+
+  <audio autoplay loop>
+    <source src="Maneva - Seja Para Mim (Ao Vivo Em São Paulo).mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <header>
+    <h1>Maria & Eu</h1>
+    <p>Uma história escrita com o coração ❤️</p>
+  </header>
+
+  <div class="photo">
+    <img src="casal.jpg" alt="Casal em um casamento">
   </div>
 
-  <!-- Conteúdo principal escondido inicialmente -->
-  <div id="conteudo" class="screen">
-    <h1>Meu Anjo</h1>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/nGGxZe3I2DE?autoplay=1&loop=1&playlist=nGGxZe3I2DE" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-    <img src="casal.jpg" alt="Casal apaixonado" />
-    <p>Maria, desde aquele casamento, quando fomos padrinho e madrinha, algo mudou em mim. A nossa conversa naquela festa ficou gravada aqui dentro — foi leve, verdadeira, especial. E desde então, cada mensagem trocada só fez crescer essa conexão linda que temos.<br><br>Não foi por acaso que nossos caminhos se cruzaram. Eu sinto, de verdade, que Deus sorriu quando nos aproximou.<br><br>Você me faz querer ser melhor, seguir em frente com mais fé, mais coragem. Eu não prometo perfeição, mas prometo cuidado, verdade e a vontade de crescer ao seu lado. Se for da vontade de Deus, eu quero ser teu José — teu presente!</p>
-    <footer>Feito com amor 💖</footer>
-  </div>
+  <section class="declaration">
+    <p>
+      Maria, desde aquele casamento, quando fomos padrinho e madrinha, algo mudou em mim. A nossa conversa naquela festa ficou gravada aqui dentro - foi leve, verdadeira, especial. E desde então, cada mensagem trocada só fez crescer essa conexão linda que temos.
+    </p>
+    <p>
+      Não foi por acaso que nossos caminhos se cruzaram. Eu sinto, de verdade, que Deus sorriu quando nos aproximou.
+    </p>
+    <p>
+      Você me faz querer ser melhor, seguir em frente com mais fé, mais coragem. Eu não prometo perfeição, mas prometo cuidado, verdade e a vontade de crescer ao seu lado. Se for da vontade de Deus, eu quero ser teu José — teu presente!
+    </p>
+  </section>
 
-  <script>
-    function mostrarPresente() {
-      document.getElementById('tela-inicial').classList.remove('visible');
-      setTimeout(() => {
-        document.getElementById('tela-inicial').style.display = 'none';
-        document.getElementById('conteudo').classList.add('visible');
-      }, 500);
-    }
-  </script>
 </body>
 </html>
